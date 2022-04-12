@@ -1,0 +1,12 @@
+{
+
+    "env": {
+        "db": {
+          "host": "127.0.0.1",
+          "user": "root",
+          "password": "demirals1234",
+          "database": "mysql"
+        }
+      }
+
+}
