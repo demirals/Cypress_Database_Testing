@@ -1,0 +1,11 @@
+mysql employees tables erstellen :
+
+https://www.youtube.com/watch?v=-ksz8J6FQ0A
+https://github.com/datacharmer/test_db
+
+
+
+
+datenbank test case und constructur beispiel :
+
+https://testersdock.com/cypress-database-testing/
