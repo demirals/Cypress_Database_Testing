@@ -11,9 +11,26 @@ describe('Example to Demonstrate SQL Database Testing in Cypress', () => {
         (003, "Dwight", "House No. 03", "Lapland"),
         (004, "Michael", "House No. 04", "Vantaa");`).then((result) => {
             cy.log(JSON.stringify(result))
+            console.log(result.affectedRows)
+        
             expect(result.affectedRows).to.equal(4)
             })
     })
+
+//tabloyu yazdirmak icin bunu ekledim
+    it('First check database',()=>{
+        cy.task("queryDb", {
+
+            dbConfig: Cypress.env("db"),
+            sql: `
+            select * from Persons
+            `
+        }).then((result)=>{
+            console.log(result)
+        })
+    })
+
+
 
     it('Update an Entry into the table and verify', function () {
         cy.task('queryDb', `UPDATE Persons SET FirstName = "Kevin" WHERE City="Vantaa"`).then((result) => {

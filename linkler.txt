@@ -9,3 +9,14 @@ https://github.com/datacharmer/test_db
 datenbank test case und constructur beispiel :
 
 https://testersdock.com/cypress-database-testing/
+
+
+ROUTINES :
+https://maxschmitt.me/posts/cypress-routines/#introducing-cypress-routines
+
+
+
+video-text tutorials :
+https://www.youtube.com/playlist?list=PLzDWIPKHyNmK9NX9_ng2IdrkEr8L4WwB0
+https://testersdock.com/cypress-tutorial/
+
