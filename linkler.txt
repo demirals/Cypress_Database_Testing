@@ -11,12 +11,30 @@ datenbank test case und constructur beispiel :
 https://testersdock.com/cypress-database-testing/
 
 
+CUCUMBER Framework:
+https://testersdock.com/cypress-cucumber-bdd/
+https://www.youtube.com/watch?v=qupyblTFqd8&list=PLzDWIPKHyNmK9NX9_ng2IdrkEr8L4WwB0&index=14
+
+For colored feature sentences, do not forget first plugin in marketplace (given when then)
+
+
+
+CUCUMBER HTML REPORTING:
+https://blog.knoldus.com/generating-cucumber-html-report-cypress/
+
+##########################################
+not: packace.json satir 21 comment yaptim.
+
+
 ROUTINES :
 https://maxschmitt.me/posts/cypress-routines/#introducing-cypress-routines
+
+
 
 
 
 video-text tutorials :
 https://www.youtube.com/playlist?list=PLzDWIPKHyNmK9NX9_ng2IdrkEr8L4WwB0
 https://testersdock.com/cypress-tutorial/
+https://www.youtube.com/playlist?list=PLMZdod-kiMhKiRztQX_rng7EfcI5OteMR
 

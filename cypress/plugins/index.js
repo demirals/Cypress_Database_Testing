@@ -43,6 +43,13 @@ function queryTestDb(query, config) {
 }
 
 
+const cucumber = require('cypress-cucumber-preprocessor').default
+
+
 module.exports = (on, config) => {
-  on('task', { queryDb: query => { return queryTestDb(query, config) }, }); //For running sql query
+  on('task', { queryDb: query => { return queryTestDb(query, config) }, }), //For running sql query
+  on('file:preprocessor', cucumber());
 }
+
+
+

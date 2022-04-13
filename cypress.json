@@ -1,5 +1,17 @@
 {
 
+  
+  "defaultCommandTimeout": 1000,
+  "pageLoadTimeout": 8000,
+  "viewportHeight": 1028,
+  "viewportWidth": 1920,
+  
+  "chromeWebSecurity": false,
+  "failOnStatusCode": false,
+  "testFiles": "**/*.feature",
+
+
+
     "env": {
         "db": {
           "host": "localhost",
@@ -9,5 +21,9 @@
           "database": "mysql"
         }
       }
+        
+        
 
 }
+
+

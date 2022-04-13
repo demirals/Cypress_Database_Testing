@@ -1,8 +1,9 @@
-describe('Example to Demonstrate SQL Database Testing in Cypress', () => {
-
-    it('Create a Table', function () {
-        cy.task('queryDb', "CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255))")
-    })
+// testerdockDatabaseTesting.spec.js created with Cypress
+//
+// Start writing your Cypress tests below!
+// If you're unfamiliar with how Cypress works,
+// check out the link below and learn how to write your first test:
+// https://on.cypress.io/writing-first-test
 
     it('Input Entries into the table', function () {
         cy.task('queryDb', `INSERT INTO Persons (PersonID, FirstName, Address, City) VALUES
@@ -18,7 +19,7 @@ describe('Example to Demonstrate SQL Database Testing in Cypress', () => {
     })
 
 //tabloyu yazdirmak icin bunu ekledim
-    it('First check database',()=>{
+    it('Log console all persons data',()=>{
         cy.task("queryDb", {
 
             dbConfig: Cypress.env("db"),
@@ -53,4 +54,3 @@ describe('Example to Demonstrate SQL Database Testing in Cypress', () => {
             expect(result.message).to.equal("")
         })
     })
-})
