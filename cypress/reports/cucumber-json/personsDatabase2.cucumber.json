@@ -1,0 +1,82 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "personsDatabase",
+    "line": 1,
+    "id": "personsdatabase",
+    "tags": [],
+    "uri": "personsDatabase2.feature",
+    "elements": [
+      {
+        "id": "personsdatabase;create-a-table-named-persons-and-make-changes-on-it",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Create a table named Persons and make changes on it",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Create a Table",
+            "result": {
+              "status": "passed",
+              "duration": 188000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Input Entries into the table",
+            "result": {
+              "status": "passed",
+              "duration": 32000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "Log console all persons data",
+            "result": {
+              "status": "passed",
+              "duration": 25000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Update an Entry into the table and verify",
+            "result": {
+              "status": "passed",
+              "duration": 39000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "Verify that there is only one row where the city is Espoo",
+            "result": {
+              "status": "passed",
+              "duration": 22000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "Delete a Table and Verify",
+            "result": {
+              "status": "passed",
+              "duration": 31000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

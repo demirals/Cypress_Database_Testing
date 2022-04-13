@@ -5,9 +5,14 @@
 // check out the link below and learn how to write your first test:
 // https://on.cypress.io/writing-first-test
 
-import { And, Then, When } from "cypress-cucumber-preprocessor/steps"
+import { And, Given, Then, When } from "cypress-cucumber-preprocessor/steps"
 
-Given('Input Entries into the table', function () {
+Given('Create a Table', function () {
+    cy.task('queryDb', "CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255))")
+})
+
+
+When('Input Entries into the table', function () {
     cy.task('queryDb', `INSERT INTO Persons (PersonID, FirstName, Address, City) VALUES
     (001, "John", "House No. 01", "Helsinki"),
     (002, "Pam", "House No. 02", "Espoo"),
@@ -21,7 +26,7 @@ Given('Input Entries into the table', function () {
 })
 
 //tabloyu yazdirmak icin bunu ekledim
-When('Log console all persons data',()=>{
+And('Log console all persons data',()=>{
     cy.task("queryDb", {
 
         dbConfig: Cypress.env("db"),

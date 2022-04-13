@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "OscarTest1",
+    "line": 1,
+    "id": "oscartest1",
+    "tags": [],
+    "uri": "OscarTest1.feature",
+    "elements": [
+      {
+        "id": "oscartest1;create-a-table-named-oscars-and-make-changes-on-it",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Create a table named Oscars and make changes on it",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Create a Table",
+            "result": {
+              "status": "passed",
+              "duration": 82000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Input Entries into the table",
+            "result": {
+              "status": "passed",
+              "duration": 26000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "Log console all persons data",
+            "result": {
+              "status": "passed",
+              "duration": 21000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "Delete a Table and Verify",
+            "result": {
+              "status": "passed",
+              "duration": 32000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
