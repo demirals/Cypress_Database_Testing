@@ -32,8 +32,6 @@ And('Log console all persons data',()=>{
 
 
 
-
-
 Then('Delete a Table and Verify', function () {
     cy.task('queryDb', `DROP TABLE Oscars`).then((result) => {
         expect(result.message).to.equal("")

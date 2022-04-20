@@ -1,17 +1,17 @@
 [
   {
     "keyword": "Feature",
-    "name": "OscarTest1",
+    "name": "Employeestest",
     "line": 1,
-    "id": "oscartest1",
+    "id": "employeestest",
     "tags": [],
-    "uri": "OscarTest1.feature",
+    "uri": "employeesTest.feature",
     "elements": [
       {
-        "id": "oscartest1;create-a-table-named-oscars-and-make-changes-on-it",
+        "id": "employeestest;insert-a-firstname-to-the-employees-table",
         "keyword": "Scenario",
         "line": 3,
-        "name": "Create a table named Oscars and make changes on it",
+        "name": "Insert a firstname to the employees table",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -19,40 +19,30 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 5,
-            "name": "Create a Table",
-            "result": {
-              "status": "passed",
-              "duration": 109000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 6,
             "name": "Input Entries into the table",
             "result": {
               "status": "passed",
-              "duration": 26000000
+              "duration": 352000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 7,
+            "line": 6,
             "name": "Log console all persons data",
             "result": {
               "status": "passed",
-              "duration": 20000000
+              "duration": 305000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 10,
-            "name": "Delete a Table and Verify",
+            "line": 7,
+            "name": "Delete last entry",
             "result": {
               "status": "passed",
-              "duration": 36000000
+              "duration": 556000000
             }
           }
         ]

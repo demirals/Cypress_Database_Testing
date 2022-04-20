@@ -1,4 +1,229 @@
-mysql employees tables erstellen :
+CYPRESS Installieren auf IDE
+============================
+Erstellen ein leeres Verzeichnes mit dem Project_name auf Desktop usw..
+
+Wahlen dieses Verzeichen im IDE (Visual Studio Code) aus.
+
+Öffnen neuer Terminal, um die "package.json" datei im Framework zu erstellen ;
+
+	# npm init
+
+Zur Erstellung restlicher Pakete ;
+
+	# npm install cypress --save-dev
+
+	# npx cypress open
+
+In "cypress.json" Datei :   (Nutzung_Beispiel für baseURL : cy.visit('/'))
+
+{
+      "baseURL": "https://....",
+	"password": "12345"
+}
+
+Erstellen neue Folder und Datei.spec.js unter Integration Pakete (für noncucumber Framework)
+
+Treten in die Folder von der Datei.spec.js und um die datei zu laufen im CLI Modus;
+
+	# node datei.spec.js
+
+
+CUCUMBER Framework:
+===================
+https://testersdock.com/cypress-cucumber-bdd/
+
+
+1. Installieren Sie das cypress-cucumber-preprocessor-Plugin (Sehe Plugin in package.json datei).
+
+	# npm install --save-dev cypress-cucumber-preprocessor
+
+2. Schreiben Sie unten in Ihre package.json. Damit soll sichergestellt werden, dass cypress-cucumber-preprocessor keine globalen Schrittdefinitionen verwendet.
+
+"cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+    }	
+
+3. Gehen Sie zu cypress/plugins/index.js und schreiben Sie:
+
+
+const cucumber = require('cypress-cucumber-preprocessor').default
+module.exports = (on, config) => {
+  on('file:preprocessor', cucumber())
+}
+
+
+4. Gehen Sie zu cypress.json und fügen Sie unten hinzu. Dies dient dazu, unserer Cypress-Konfiguration Unterstützung für Feature-Dateien hinzuzufügen.
+
+
+  "testFiles": "**/*.{feature,features}"
+
+
+5. Als nächstes schreiben wir unseren Cucumber-Test im Gherkin-Format (Given When Then). Erstellen Sie dazu einen Ordner namens cucumber-test im Ordner cypress/integration und erstellen Sie dann eine Datei namens login.feature.
+
+6. Der nächste Schritt besteht darin, eine Schrittdefinitionsdatei zu erstellen, die jeden Schritt der Feature-Datei in Aktionen übersetzt, die Cypress ausführt. Erstellen Sie dazu in cucumber-tests einen Ordner mit dem gleichen Namen wie die Feature-Datei, die in unserem Fall login ist, und erstellen Sie in dem Ordner erneut eine js-Datei – login.js.
+
+integration 
+cucumber-test
+> login.feature 
+> login > login.spec.js
+
+
+7. Executing the tests via Test Runner oder Executing the tests via CLI using the command:
+
+
+npx cypress run --spec cypress/integration/cucumber-test/login.feature //For single feature file
+OR
+npx cypress run --spec cypress/integration/cucumber-test/*.feature //For all feature files
+
+
+
+https://www.youtube.com/watch?v=qupyblTFqd8&list=PLzDWIPKHyNmK9NX9_ng2IdrkEr8L4WwB0&index=14
+
+Not : Vergessen Sie bei farbigen Feature-Sätzen nicht das erste Plugin im Marketplace (given when then)
+
+
+
+CUCUMBER HTML REPORTING:
+========================
+https://blog.knoldus.com/generating-cucumber-html-report-cypress/
+
+1. Da wir das Cypress-Cucumber-Preprocessor-Plugin bereits in unserer package.json haben, müssen wir es jetzt nur noch ein wenig modifizieren. Wir müssen diesem Plugin Folgendes hinzufügen.
+
+"cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+
+2. Installieren Sie dieses unten erwähnte Plugin in Ihrem Projekt
+
+	# npm install multiple-cucumber-html-reporter --save-dev
+
+3. Erstellen Sie einen cucumber-html-report.js datei direkt unter den Projekt neben .json dateien.
+
+
+const report = require("multiple-cucumber-html-reporter");
+report.generate({
+    jsonDir: "cypress/reports/cucumber-json",  // ** Path of .json file **//
+    reportPath: "cypress/reports", // ** Path of .html file **//
+    
+
+
+    metadata: {
+        browser: {
+            name: "chrome",
+            version: "92",
+        },
+        device: "Local test machine",
+        platform: {
+            name: "windows",
+            version: "10",
+        },
+    },
+});
+
+4. Um nun den HTML-Bericht zu generieren, führen Sie einfach diese .js-Datei aus.
+
+	# node cucumber-html-report.js
+
+
+
+DATENBANK Test case und constructur beispiel :
+==============================================
+
+https://testersdock.com/cypress-database-testing/
+
+1. Installieren Sie das MySQL-Plugin. Sobald es installiert ist, sollte es sich unter Ihrer package.json widerspiegeln.
+
+	# npm i mysql -D
+
+2. Wir verwenden das mysql-Plugin, um eine Verbindung zu unserer Datenbank herzustellen. Gehen Sie zu cypress/plugins/index.js und schreiben Sie:
+
+//For connecting to SQL Server
+const mysql = require('mysql')
+function queryTestDb(query, config) {
+  // creates a new mysql connection using credentials from cypress.json env's
+  const connection = mysql.createConnection(config.env.db)
+  // start connection to db
+  connection.connect()
+  // exec query + disconnect to db as a Promise
+  return new Promise((resolve, reject) => {
+    connection.query(query, (error, results) => {
+      if (error) reject(error)
+      else {
+        connection.end()
+        return resolve(results)
+      }
+    })
+  })
+}
+
+3. Jetzt werden wir cy.task() verwenden, um cypress die Ausführung von SQL-Abfragen zu ermöglichen. Gehen Sie dazu wieder zu cypress/plugins/index.js und schreiben Sie:
+
+module.exports = (on, config) => {
+  on('task', { queryDb: query => { return queryTestDb(query, config) }, }); //For running sql query
+}
+
+4: Go to cypress.json and write the following. These details would be used to connect to our db.
+
+"env": {
+    "db": {
+      "host": "db4free.net",
+      "user": "admin",
+      "password": "password",
+      "database": "db_name"
+    }
+  }
+
+
+5: Now lets write our test to perform some database actions.
+
+describe('Example to Demonstrate SQL Database Testing in Cypress', () => {
+
+    it('Create a Table', function () {
+        cy.task('queryDb', "CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255))")
+    })
+
+    it('Input Entries into the table', function () {
+        cy.task('queryDb', `INSERT INTO Persons (PersonID, FirstName, Address, City) VALUES
+        (001, "John", "House No. 01", "Helsinki"),
+        (002, "Pam", "House No. 02", "Espoo"),
+        (003, "Dwight", "House No. 03", "Lapland"),
+        (004, "Michael", "House No. 04", "Vantaa");`).then((result) => {
+                expect(result.affectedRows).to.equal(4)
+            })
+    })
+
+    it('Update an Entry into the table and verify', function () {
+        cy.task('queryDb', `UPDATE Persons SET FirstName = "Kevin" WHERE City="Vantaa"`).then((result) => {
+            expect(result.changedRows).to.equal(1)
+        })
+        cy.task('queryDb', `SELECT FirstName FROM Persons WHERE City="Vantaa"`).then((result) => {
+            expect(result[0].FirstName).to.equal('Kevin')
+        })
+    })
+
+    it('Verify that there is only one row where the city is Espoo', function () {
+        cy.task('queryDb', `SELECT COUNT(*) as "rowCount" FROM Persons WHERE City="Espoo"`).then((result) => {
+
+            expect(result[0].rowCount).to.equal(1)
+        })
+    })
+
+    it('Delete a Table and Verify', function () {
+        cy.task('queryDb', `DROP TABLE Persons`).then((result) => {
+            expect(result.message).to.equal("")
+        })
+    })
+})
+
+
+MySQL employees tables erstellen :
+==================================
 
 https://www.youtube.com/watch?v=-ksz8J6FQ0A
 https://github.com/datacharmer/test_db
@@ -6,21 +231,10 @@ https://github.com/datacharmer/test_db
 
 
 
-datenbank test case und constructur beispiel :
-
-https://testersdock.com/cypress-database-testing/
-
-
-CUCUMBER Framework:
-https://testersdock.com/cypress-cucumber-bdd/
-https://www.youtube.com/watch?v=qupyblTFqd8&list=PLzDWIPKHyNmK9NX9_ng2IdrkEr8L4WwB0&index=14
-
-For colored feature sentences, do not forget first plugin in marketplace (given when then)
 
 
 
-CUCUMBER HTML REPORTING:
-https://blog.knoldus.com/generating-cucumber-html-report-cypress/
+
 
 ##########################################
 not: packace.json satir 21 comment yaptim.

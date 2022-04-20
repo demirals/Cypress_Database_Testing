@@ -1,0 +1,38 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Employeestest",
+    "line": 1,
+    "id": "employeestest",
+    "tags": [],
+    "uri": "vytrack.feature",
+    "elements": [
+      {
+        "id": "employeestest;insert-a-firstname-to-the-employees-table",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Insert a firstname to the employees table",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "Log console all persons data",
+            "result": {
+              "status": "failed",
+              "duration": 10097000000,
+              "error_message": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> connect ETIMEDOUT\n    at http://localhost:57153/__cypress/runner/cypress_runner.js:162280:78\nFrom previous event:\n    at Context.task (http://localhost:57153/__cypress/runner/cypress_runner.js:162262:15)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:57153/__cypress/tests?p=cypress\\integration\\cucumber-test\\vytrack.feature:48:6)\n    at Context.resolveAndRunStepDefinition (http://localhost:57153/__cypress/tests?p=cypress\\integration\\cucumber-test\\vytrack.feature:10463:29)\n    at Context.eval (http://localhost:57153/__cypress/tests?p=cypress\\integration\\cucumber-test\\vytrack.feature:9784:35)\n\nFrom Node.js Internals:\n  Error: connect ETIMEDOUT\n      at Connection._handleConnectTimeout (C:\\Users\\Selami Demiral\\Desktop\\dokumanlar\\PROGRAM exe Dosyalari\\CYPRESS_MySQL_REST_API\\Database_Testing\\node_modules\\mysql\\lib\\Connection.js:409:13)\n      at Object.onceWrapper (node:events:645:28)\n      at Socket.emit (node:events:526:28)\n      at Socket._onTimeout (node:net:501:8)\n      at listOnTimeout (node:internal/timers:559:17)\n      at processTimers (node:internal/timers:502:7)\n  \n  --------------------\n      at Protocol._enqueue (C:\\Users\\Selami Demiral\\Desktop\\dokumanlar\\PROGRAM exe Dosyalari\\CYPRESS_MySQL_REST_API\\Database_Testing\\node_modules\\mysql\\lib\\protocol\\Protocol.js:144:48)\n      at Protocol.handshake (C:\\Users\\Selami Demiral\\Desktop\\dokumanlar\\PROGRAM exe Dosyalari\\CYPRESS_MySQL_REST_API\\Database_Testing\\node_modules\\mysql\\lib\\protocol\\Protocol.js:51:23)\n      at Connection.connect (C:\\Users\\Selami Demiral\\Desktop\\dokumanlar\\PROGRAM exe Dosyalari\\CYPRESS_MySQL_REST_API\\Database_Testing\\node_modules\\mysql\\lib\\Connection.js:116:18)\n      at queryTestDb (C:\\Users\\Selami Demiral\\Desktop\\dokumanlar\\PROGRAM exe Dosyalari\\CYPRESS_MySQL_REST_API\\Database_Testing\\cypress\\plugins\\index.js:32:14)\n      at queryDb (C:\\Users\\Selami Demiral\\Desktop\\dokumanlar\\PROGRAM exe Dosyalari\\CYPRESS_MySQL_REST_API\\Database_Testing\\cypress\\plugins\\index.js:50:43)\n      at invoke (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\lib\\plugins\\child\\task.js:46:14)\n      at C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\lib\\plugins\\util.js:45:14\n      at tryCatcher (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\util.js:16:23)\n      at Function.Promise.attempt.Promise.try (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\method.js:39:29)\n      at Object.wrapChildPromise (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\lib\\plugins\\util.js:44:23)\n      at Object.wrap (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\lib\\plugins\\child\\task.js:52:8)\n      at execute (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\lib\\plugins\\child\\run_plugins.js:131:19)\n      at EventEmitter.<anonymous> (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\lib\\plugins\\child\\run_plugins.js:213:5)\n      at EventEmitter.emit (node:events:526:28)\n      at process.<anonymous> (C:\\Users\\Selami Demiral\\AppData\\Local\\Cypress\\Cache\\9.5.4\\Cypress\\resources\\app\\packages\\server\\lib\\plugins\\util.js:19:22)\n      at process.emit (node:events:526:28)\n      at emit (node:internal/child_process:938:14)\n      at processTicksAndRejections (node:internal/process/task_queues:84:21)\n  "
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

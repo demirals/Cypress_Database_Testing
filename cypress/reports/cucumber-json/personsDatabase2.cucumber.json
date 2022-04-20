@@ -22,7 +22,7 @@
             "name": "Create a Table",
             "result": {
               "status": "passed",
-              "duration": 188000000
+              "duration": 125000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "Input Entries into the table",
             "result": {
               "status": "passed",
-              "duration": 32000000
+              "duration": 27000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "Log console all persons data",
             "result": {
               "status": "passed",
-              "duration": 25000000
+              "duration": 20000000
             }
           },
           {
@@ -62,7 +62,7 @@
             "name": "Verify that there is only one row where the city is Espoo",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 18000000
             }
           },
           {
@@ -72,7 +72,7 @@
             "name": "Delete a Table and Verify",
             "result": {
               "status": "passed",
-              "duration": 31000000
+              "duration": 43000000
             }
           }
         ]
