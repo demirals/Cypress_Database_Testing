@@ -83,7 +83,7 @@ Not : Vergessen Sie bei farbigen Feature-Sätzen nicht das erste Plugin im Marke
 
 
 
-CUCUMBER HTML REPORTING:
+CUCUMBER HTML REPORTING:    (CALISTIRAMADIM Libray projesinde)
 ========================
 https://blog.knoldus.com/generating-cucumber-html-report-cypress/
 
@@ -98,6 +98,26 @@ https://blog.knoldus.com/generating-cucumber-html-report-cypress/
       "fileSuffix": ".cucumber"
     }
   }
+
+WICHTIG: In package.json datei in "scripts" >>  Ändern Sie den Satz "test": "echo \"Error: no test specified\" && exit 1", wie unten ;
+
+"test:echo": "echo \"Error: no test specified\" && exit 1",
+
+und fügen Sie die Sätze unten hin;
+
+    "test:open": "cypress open",
+    "test:qabox": "npx cypress-tags run --env \"TAGS=@qabox\"",
+    "test:tn1NOTtn2": "npx cypress-tags run --env \"TAGS=@tagname1 and not @tagname2\"",
+    "test:tn1ANDtn2": "npx cypress-tags run --env \"TAGS=@tagname1 AND @tagname2\"",
+    "test:tn1ORtn2": "npx cypress-tags run --env \"TAGS=@tagname1 OR @tagname2\"",
+    "clean:reports": "if exist cypress\\reports rmdir /S/Q cypress\\reports",
+    "pretest": "npm run clean:reports",
+    "scripts": "cypress run --browser chrome",
+    "posttest": "node cucumber-html-report.js",
+    "test": "npm run scripts || npm run posttest",
+
+
+
 
 2. Installieren Sie dieses unten erwähnte Plugin in Ihrem Projekt
 
@@ -125,6 +145,7 @@ report.generate({
         },
     },
 });
+
 
 4. Um nun den HTML-Bericht zu generieren, führen Sie einfach diese .js-Datei aus.
 
