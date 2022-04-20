@@ -132,6 +132,34 @@ report.generate({
 
 
 
+DASHBOARD Erstellung :
+======================
+Alle Dateien müssen in GitHub sein (git add .  / git commit -m ""  / git push)
+
+Navigieren zu Webseite >> dashboard.cypress.io  >> login mit Google Konto* oder GitHub
+
+Erstellen Sie ein neues Projekt in dashboard mit Projektname
+
+Fügen Sie Projekt_ID auf cypress.json Datei
+
+{
+    "projectId": "z8tnphk"
+}
+
+Fügen Sie den Record Key and die Phath von spec. datei (ab cypress/..) in Datei Package.json in "scripts" : {} 
+
+"scripts" : {
+
+"Library_Database_UI_Testing": "npx cypress run --record --key 2d92a570-1258-4436-111 --spec 'cypress/integration/cucumber-test/us01/us01.spec.js' "
+
+}
+
+ 	# npm run Library_Database_UI_Testing  			>> mit der Projektname in packace.json datei
+
+
+Sehen Sie Testergebnisse in dashboard.cypress.io webseite
+
+
 DATENBANK Test case und constructur beispiel :
 ==============================================
 
