@@ -83,7 +83,7 @@ Not : Vergessen Sie bei farbigen Feature-Sätzen nicht das erste Plugin im Marke
 
 
 
-CUCUMBER HTML REPORTING:    (CALISTIRAMADIM Libray projesinde)
+CUCUMBER HTML REPORTING:    (CALISTIRAMADIM Libray projesinde, bu projede calisiyor örnek olabilir ==>> https://github.com/demirals/Cypress_Database_Testing)
 ========================
 https://blog.knoldus.com/generating-cucumber-html-report-cypress/
 
