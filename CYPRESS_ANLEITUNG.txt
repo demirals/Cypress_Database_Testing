@@ -271,6 +271,26 @@ describe('Example to Demonstrate SQL Database Testing in Cypress', () => {
 })
 
 
+Cypress - Github :
+=================
+1. Erstellen Sie ein Repository
+2. Kopieren Sie den Github-Link
+3. Gehen Sie auf die Kommandozeile 
+4. C:\Benutzer\Benutzer>cd Desktop
+   C:\Benutzer\Benutzer\Desktop>git clone "github link paste here"
+5. Sie sollten den Text sehen:
+Clone in 'cypress_gitt'....
+remote: Aufzählung der Objekte: 3, fertig.
+remote: Zählen von Objekten: 100% (3/3), erledigt.
+ferngesteuert: Insgesamt 3 (delta 0), wiederverwendet 0 (delta 0), pack-reused 0.
+Empfangen von Objekten: 100% (3/3), erledigt.
+6. Erstellen Sie einen Branch und fügen Sie einige Änderungen hinzu.
+7. Klicken Sie auf das Versionskontrollsymbol auf der linken Seite.
+8. Klicken Sie auf das Plus-Zeichen für die Änderungen, die Sie übertragen wollen, das heiß  "staging".
+9. Klicken Sie auf das Häkchen und dann auf die "drei punkte "und "push".
+10.Gehen Sie zu Github in den neuen bRANCH, erstellen Sie einen Pull Request und führen Sie ihn zusammen.
+
+
 MySQL employees tables erstellen :
 ==================================
 
